@@ -19,6 +19,8 @@
 
 Instead of requiring users to manually write SQL, Python, or build charts, DataPilot accepts a dataset and a natural-language analytical question. Its agent workflow determines the appropriate analytical steps, executes them through controlled tools, validates the results, and presents the findings through tables, charts, explanations, recommendations, and reports.
 
+**Live Demo:** https://datapilot-frontend-u0b2.onrender.com/
+
 ### Example
 
 A user can ask:
@@ -112,7 +114,7 @@ The complete application runs through Docker Compose with separate containers fo
 
 ---
 
-# Demo & Interface
+#  Interface
 
 ### Main Interface
 
@@ -550,6 +552,34 @@ Potential future improvements include:
 - More specialized domain-specific analytical agents
 
 ---
+
+## Deployment
+
+DataPilot is deployed using **Render** with a production architecture consisting of:
+
+- **NiceGUI** frontend
+- **FastAPI** backend
+- **PostgreSQL** managed database
+- **Docker** containers for frontend and backend
+- **GitHub** for source control and continuous deployment
+
+### Production Architecture
+
+```text
+GitHub
+   │
+   ├── Render Web Service
+   │      └── NiceGUI Frontend
+   │
+   ├── Render Web Service
+   │      └── FastAPI Backend
+   │             │
+   │             ├── LangGraph
+   │             ├── MCP
+   │             ├── DuckDB
+   │             └── AI Providers
+   │
+   └── Render PostgreSQL
 
 # License
 

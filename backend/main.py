@@ -89,10 +89,15 @@ async def health_check():
 # Enable CORS for Vite frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allow all origins for easier portfolio deployment
+    allow_origins=[
+        "http://localhost:8501",
+        "http://127.0.0.1:8501",
+        "https://datapilot-frontend-u0b2.onrender.com",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    
 )
 
 
