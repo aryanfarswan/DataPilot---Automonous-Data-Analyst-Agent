@@ -82,6 +82,10 @@ async def lifespan(app: FastAPI):
 # Initialize FastAPI App with Lifespan
 app = FastAPI(title="Autonomous Data Analyst Agent API", version="1.1", lifespan=lifespan)
 
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
 # Enable CORS for Vite frontend
 app.add_middleware(
     CORSMiddleware,
@@ -90,6 +94,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # Temp upload folder
 UPLOAD_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "uploads"))
