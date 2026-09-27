@@ -565,7 +565,7 @@ B.Tech — Artificial Intelligence & Machine Learning
 
 Interested in **Data Science, Machine Learning, Generative AI, Agentic AI, and Data Analytics**.
 
-- GitHub: [DataPilot Repository](https://github.com/aryanfarswan/DataPilot---Automonous-Data-Analyst-Agent)
+- [Github](https://github.com/aryanfarswan)
 - [LinkedIn](https://www.linkedin.com/in/aryanfarswanofficial/)
 
 ---
