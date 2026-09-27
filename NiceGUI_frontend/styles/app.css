@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --radius: 1rem;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Modern Light Theme Tokens (Default) */
+  --bg-main: #f4f6fb;
+  --bg-sidebar: #ffffff;
+  --bg-card: #ffffff;
+  --color-foreground: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+
+  --color-primary: #2563eb;
+  --color-primary-glow: #60a5fa;
+  --color-success: #10b981;
+  --color-destructive: #ef4444;
+
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --gradient-surface: #ffffff;
+  --gradient-glow: radial-gradient(800px circle at 15% 0%, rgba(37, 99, 235, 0.04), transparent 60%);
+
+  --shadow-glow: 0 8px 24px -10px rgba(37, 99, 235, 0.3);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+/* Light Theme Variables */
+body:not(.body--dark) {
+  --bg-main: #f4f6fb;
+  --bg-sidebar: #ffffff;
+  --bg-card: #ffffff;
+  --color-foreground: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-primary: #2563eb;
+  --color-primary-glow: #60a5fa;
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --gradient-surface: #ffffff;
+  --gradient-glow: radial-gradient(800px circle at 15% 0%, rgba(37, 99, 235, 0.04), transparent 60%);
+  --shadow-glow: 0 8px 24px -10px rgba(37, 99, 235, 0.3);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+/* Dark Theme Overrides (if toggled) */
+body.body--dark {
+  --bg-main: #0f172a;
+  --bg-sidebar: #1e293b;
+  --bg-card: #1e293b;
+  --color-foreground: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-border: rgba(148, 163, 184, 0.16);
+  --color-primary: #3b82f6;
+  --color-primary-glow: #60a5fa;
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  --gradient-surface: #1e293b;
+  --gradient-glow: radial-gradient(800px circle at 15% 0%, rgba(37, 99, 235, 0.12), transparent 60%);
+  --shadow-glow: 0 10px 30px -10px rgba(37, 99, 235, 0.4);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background-color: var(--bg-main) !important;
+  color: var(--color-foreground) !important;
+  font-family: var(--font-sans) !important;
+  background-image: var(--gradient-glow) !important;
+  background-attachment: fixed !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.45);
+}
+
+/* Glass Card */
+.glass-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.glass-card:hover {
+  border-color: rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Primary Button Glow */
+.btn-primary-glow {
+  background: var(--gradient-primary) !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-glow) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-primary-glow:hover {
+  box-shadow: 0 10px 28px -6px rgba(37, 99, 235, 0.45) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Fade in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Quasar Layout & Drawer Tweaks */
+.q-drawer {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.q-drawer--left {
+  border-right: none !important;
+}
+
+.q-drawer--right {
+  border-left: none !important;
+}
+
+/* Quasar Table */
+.q-table__container {
+  background: transparent !important;
+  color: var(--color-foreground) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 0.75rem !important;
+}
+
+.q-table th {
+  color: var(--color-muted) !important;
+  background: #f8fafc !important;
+  font-weight: 600 !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+
+.q-table td {
+  color: var(--color-foreground) !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.q-table tbody tr:hover {
+  background-color: #f8fafc !important;
+}
+
+/* Custom CSV Upload Drop Zone */
+.custom-dropzone {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 620px !important;
+  min-height: 270px !important;
+  border: 2px dashed rgba(59, 130, 246, 0.45) !important;
+  border-radius: 1.5rem !important;
+  background: rgba(239, 246, 255, 0.35) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+  padding: 2.5rem 1.5rem !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+}
+
+.custom-dropzone:hover {
+  border-color: rgba(37, 99, 235, 0.8) !important;
+  background: rgba(239, 246, 255, 0.75) !important;
+  box-shadow: 0 0 30px -5px rgba(37, 99, 235, 0.2) !important;
+  transform: scale(1.006) !important;
+}
+
+.custom-dropzone:has(.q-uploader--dnd),
+.custom-dropzone.drag-over {
+  border-color: #2563eb !important;
+  background: rgba(219, 234, 254, 0.6) !important;
+  box-shadow: 0 0 35px rgba(37, 99, 235, 0.25) !important;
+  transform: scale(1.015) !important;
+}
+
+/* Transparent Quasar Uploader overlay */
+.custom-dropzone .q-uploader {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  z-index: 20 !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom-dropzone .q-uploader__header,
+.custom-dropzone .q-uploader__header-content,
+.custom-dropzone .q-uploader__header-content > div,
+.custom-dropzone .q-btn,
+.custom-dropzone .q-uploader__input {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer !important;
+  display: block !important;
+}
+
+.custom-dropzone .q-uploader__list {
+  display: none !important;
+}
+
+.custom-dropzone .q-uploader__file {
+  display: none !important;
+}
